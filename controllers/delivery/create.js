@@ -1,5 +1,4 @@
 const Deliveries = require("../../models/deliveries.model");
-const Customer = require("../../models/customers.model");
 
 // Add new delivery
 class addDelivery {
