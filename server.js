@@ -16,11 +16,9 @@ app.use(cors());
 // Import and use routes
 const customerRoute = require("./routes/customer.routes");
 const deliveryRoute = require("./routes/delivery.routes");
-const orderRoute = require("./routes/order.routes");
 
 app.use("/customer", customerRoute);
 app.use("/delivery", deliveryRoute);
-app.use("/order", orderRoute);
 
 // Basic route for the root URL
 app.use("/", (req, res) => {
