@@ -47,7 +47,7 @@ const Customer = sequelize.define('Customer', {
 // Sync the model with the database (creates the table if it doesn't exist)
 const initializeDatabase = async () => {
   try {
-    await sequelize.sync({ force: true }); // Set force: true to drop the table if it already exists
+    await sequelize.sync({ force: false }); // Set force: true to drop the table if it already exists
     console.log('Customers table has been created or already exists.');
   } catch (error) {
     console.error('Error syncing the database:', error);
