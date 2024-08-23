@@ -14,14 +14,12 @@ class addCustomer {
         isSpecialOrder: isSpecialOrder
       });
 
-      console.log("🚀 ~ customer:", customer);
       if (!customer) {
         throw new Error("Customer not created");
       }
 
       res.status(200).json(customer);
     } catch (error) {
-      console.log("🚀 ~ error:", error);
       res.status(500).json({ error });
     }
   };

@@ -12,7 +12,6 @@ class updateCustomer {
           id: customerId,
         },
       });
-      console.log("🚀 ~ updatedCustomer:", updatedCustomer[0]);
 
       if (updatedCustomer[0] === 0) {
         throw new Error("Customer not updated");
@@ -20,7 +19,6 @@ class updateCustomer {
 
       res.status(200).json("Customer updated successfully");
     } catch (error) {
-      console.log("🚀 ~ error:", error);
       res.status(500).json({ error });
     }
   };

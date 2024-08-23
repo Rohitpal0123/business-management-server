@@ -11,7 +11,6 @@ class getCustomerById {
       }
       res.status(200).send(customer);
     } catch (error) {
-      console.log("🚀 ~ error:", error);
       res.status(500).json({ error });
     }
   };
