@@ -45,18 +45,11 @@ const Transaction = sequelize.define(
     netBalance: {
       type: DataTypes.NUMERIC,
       defaultValue: 0,
-    },
-    createdAt: {
-      type: DataTypes.DATE,
-      defaultValue: DataTypes.NOW,
-    },
-    updatedAt: {
-      type: DataTypes.DATE,
-      defaultValue: DataTypes.NOW,
-    },
+    }
   },
   {
     tableName: "transactions",
+    timestamps: false,
   }
 );
 

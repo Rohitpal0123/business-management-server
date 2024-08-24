@@ -16,6 +16,7 @@ class addDelivery {
             }
             res.status(200).send(delivery);
         } catch (error) {
+            console.log("🚀 ~ error:", error)
             res.status(500).json({ error });
         }
     }
