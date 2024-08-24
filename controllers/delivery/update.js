@@ -14,7 +14,6 @@ class updateDelivery {
           date: date,
         },
       });
-      console.log("🚀 ~ updatedDelivery:", updatedDelivery)
 
       if (updatedDelivery[0] === 0) {
         throw new Error("Delivery not updated");
@@ -22,7 +21,6 @@ class updateDelivery {
 
       res.status(200).json("Delivery updated successfully");
     } catch (error) {
-      console.log("🚀 ~ error:", error);
       res.status(500).json({ error });
     }
   };

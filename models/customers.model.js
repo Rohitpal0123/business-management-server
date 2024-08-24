@@ -35,6 +35,10 @@ const Customer = sequelize.define('Customer', {
       min: 0,
     },
   },
+  isSpecialOrder: {
+    type: DataTypes.BOOLEAN,
+    allowNull: false,
+  }
 }, {
   // Other model options go here
   tableName: 'customers', // You can customize the table name

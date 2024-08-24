@@ -11,13 +11,12 @@ class addDelivery {
                 emptyBottles: emptyBottles,
                 filledBottles: filledBottles
             });
-            console.log("🚀 ~ delivery:", delivery)
             if (!delivery) {
                 throw new Error("Delivery not created");
             }
             res.status(200).send(delivery);
         } catch (error) {
-            console.log("🚀 ~ error:", error);
+            console.log("🚀 ~ error:", error)
             res.status(500).json({ error });
         }
     }

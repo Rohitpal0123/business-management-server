@@ -12,7 +12,6 @@ class getCustomer {
 
       res.status(200).send(customers);
     } catch (error) {
-      console.log("🚀 ~ error:", error);
       res.status(500).send(error);
     }
   };
