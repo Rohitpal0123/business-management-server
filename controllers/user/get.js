@@ -14,3 +14,4 @@ class getUsers {
 }
 
 module.exports = new getUsers()
+//test
