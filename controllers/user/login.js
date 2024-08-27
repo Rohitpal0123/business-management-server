@@ -25,7 +25,6 @@ class Login {
           _id: user._id,
           firstName: user.firstName,
           lastName: user.lastName,
-          userName: user.userName,
           email: user.email,
           token: token,
         },
