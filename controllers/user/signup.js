@@ -3,21 +3,17 @@ const generateToken = require("../../utils/generateToken.js");
 const Users = require("../../models/users.models");
 
 class SignUp {
-  async userNameExists(userName) {
-    const userNameExists = await Users.findOne({ userName: userName });
-    if (userNameExists != null) throw new Error("Username already exists !");
-  }
+ 
   async emailExists(email) {
     const emailExists = await Users.findOne({ email: email });
     if (emailExists != null) throw new Error("Email is already used !");
   }
   process = async (req, res) => {
     try {
-      const { firstName, lastName, userName, email, password } = req.body;
+      const { firstName, lastName, email, password } = req.body;
       console.log("🚀 ~ req.body:", req.body);
 
       await this.emailExists(email);
-      await this.userNameExists(userName);
 
       const salt = await bcrypt.genSalt(10);
       const hashedPassword = await bcrypt.hash(password, salt);
@@ -25,7 +21,6 @@ class SignUp {
       const newUser = await Users.create({
         firstName: firstName,
         lastName: lastName,
-        userName: userName,
         email: email,
         password: hashedPassword,
       });
@@ -42,7 +37,6 @@ class SignUp {
           _id: newUser._id,
           firstName: firstName,
           lastName: lastName,
-          userName: userName,
           email: newUser.email,
           token: token,
         },
