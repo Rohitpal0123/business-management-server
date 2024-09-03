@@ -10,7 +10,7 @@ const Delivery = sequelize.define(
   {
     customerId: {
       type: DataTypes.INTEGER,
-      allowNull: false,
+      allowNull: true,
       references: {
         model: "customers", // Name of the table being referenced
         key: "id", // Key in the Customer table
