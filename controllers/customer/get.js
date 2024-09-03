@@ -4,6 +4,7 @@ const Customer = require("../../models/customers.model");
 class getCustomer {
   process = async (req, res) => {
     try {
+      console.log("first")
       const customers = await Customer.findAll();
 
       if (customers.length === 0) {

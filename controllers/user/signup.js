@@ -5,9 +5,12 @@ const Users = require("../../models/users.models");
 class SignUp {
  
   async emailExists(email) {
-    const emailExists = await Users.findOne({ email: email });
-    if (emailExists != null) throw new Error("Email is already used !");
+    const emailExists = await Users.findOne({ 
+      where: { email: email } 
+    });
+    if (emailExists) throw new Error("Email is already used!");
   }
+  
   process = async (req, res) => {
     try {
       const { firstName, lastName, email, password } = req.body;
@@ -43,7 +46,7 @@ class SignUp {
       });
     } catch (error) {
       console.log("🚀 ~ error:", error);
-      res.status(400).send(error);
+      res.status(400).send(error.message);
     }
   };
 }

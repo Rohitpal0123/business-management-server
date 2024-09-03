@@ -18,9 +18,10 @@ class addCustomer {
         throw new Error("Customer not created");
       }
 
-      res.status(200).json(customer);
+      res.status(200).send(customer);
     } catch (error) {
-      res.status(500).json({ error });
+      console.log("🚀 ~ error:", error)
+      res.status(500).send({ error });
     }
   };
 }
