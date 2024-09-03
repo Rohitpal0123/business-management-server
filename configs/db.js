@@ -1,8 +1,8 @@
 const { Sequelize } = require("sequelize");
 require("dotenv").config();
 
-const sequelize = new Sequelize("business_management", "rohit", "Zuye7mqxMS8V9ciK9RDBOhOeGyWxFw5i", {
-  host: "dpg-cr1neio8fa8c73aasjk0-a.singapore-postgres.render.com",
+const sequelize = new Sequelize("pooja_beverages_db", "rohit", "neQwE9WPM0PNdyr2nkZfUtSL6Cd8qpFR", {
+  host: "dpg-crbhd7tds78s73dfpnp0-a.singapore-postgres.render.com",
   port: 5432,
   dialect: "postgres",
   dialectOptions: {
