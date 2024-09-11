@@ -1,17 +1,17 @@
 const { Sequelize } = require("sequelize");
-require("dotenv").config();
 
+const { development, production } = require("../lib/constants");
 const sequelize = new Sequelize("business_management", "rohit", "Zuye7mqxMS8V9ciK9RDBOhOeGyWxFw5i", {
   host: "dpg-cr1neio8fa8c73aasjk0-a.singapore-postgres.render.com",
   port: 5432,
   dialect: "postgres",
+  logging: false, // Disable logging
   dialectOptions: {
     ssl: {
       require: true,
       rejectUnauthorized: false, // This bypasses certificate validation
     },
   },
-  logging: true,
 });
 
 const connectDB = async () => {
